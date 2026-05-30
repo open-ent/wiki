@@ -5,9 +5,9 @@ import {
   Label,
   Tooltip,
   useEdificeClient,
-} from '@edifice.io/react';
-import { Editor } from '@edifice.io/react/editor';
-import { IconInfoCircle, IconSave } from '@edifice.io/react/icons';
+} from '@open-ent/react';
+import { Editor } from '@open-ent/react/editor';
+import { IconInfoCircle, IconSave } from '@open-ent/react/icons';
 import { Suspense } from 'react';
 import { Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';

@@ -6,7 +6,7 @@ import {
   LoadingScreen,
   Modal,
   Table,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import { useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate, useParams } from 'react-router-dom';

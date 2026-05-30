@@ -4,7 +4,7 @@ import {
   useEdificeClient,
   useHasWorkflow,
   useLibraryUrl,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 
 import { workflows } from '~/config';

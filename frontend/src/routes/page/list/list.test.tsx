@@ -26,8 +26,8 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-vi.mock('@edifice.io/react', async () => {
-  const actual = await vi.importActual('@edifice.io/react');
+vi.mock('@open-ent/react', async () => {
+  const actual = await vi.importActual('@open-ent/react');
   return {
     ...actual,
     useBreakpoint: mocks.useBreakpoint,

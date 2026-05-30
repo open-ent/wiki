@@ -4,12 +4,12 @@ import {
   useEdificeClient,
   useToast,
   useUser,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconThumbDown,
   IconThumbUp,
   IconUpload,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { PollVoteResult } from '~/services/api/poll/poll.types';
 import {
   IMPORT_PDF_POLL_ID,

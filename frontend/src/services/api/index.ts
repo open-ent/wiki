@@ -1,4 +1,4 @@
-import { odeServices, ViewsCounters, ViewsDetails } from '@edifice.io/client';
+import { odeServices, ViewsCounters, ViewsDetails } from '@open-ent/client';
 import {
   DuplicatePageResultOrError,
   Page,

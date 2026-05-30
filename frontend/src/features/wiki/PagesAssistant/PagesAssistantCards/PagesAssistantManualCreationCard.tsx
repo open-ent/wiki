@@ -1,7 +1,7 @@
-import { Button, PromotionCard, useEdificeClient } from '@edifice.io/react';
+import { Button, PromotionCard, useEdificeClient } from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { IconPlus, IconWrite } from '@edifice.io/react/icons';
+import { IconPlus, IconWrite } from '@open-ent/react/icons';
 
 export const PagesAssistantManualCreationCard = () => {
   const { appCode } = useEdificeClient();

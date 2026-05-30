@@ -1,6 +1,6 @@
-import { ID } from '@edifice.io/client';
-import { Dropdown, IconButtonProps, Menu, Tree } from '@edifice.io/react';
-import { IconHide, IconPlus, IconTextPage } from '@edifice.io/react/icons';
+import { ID } from '@open-ent/client';
+import { Dropdown, IconButtonProps, Menu, Tree } from '@open-ent/react';
+import { IconHide, IconPlus, IconTextPage } from '@open-ent/react/icons';
 import clsx from 'clsx';
 import { RefAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';

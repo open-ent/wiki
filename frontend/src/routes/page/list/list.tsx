@@ -5,8 +5,8 @@ import {
   LoadingScreen,
   useBreakpoint,
   useDate,
-} from '@edifice.io/react';
-import { ViewsCounter, ViewsModal } from '@edifice.io/react/audience';
+} from '@open-ent/react';
+import { ViewsCounter, ViewsModal } from '@open-ent/react/audience';
 import { QueryClient } from '@tanstack/react-query';
 import clsx from 'clsx';
 import { lazy, Suspense, useEffect, useState } from 'react';

@@ -1,10 +1,10 @@
-import { IWebApp } from '@edifice.io/client';
+import { IWebApp } from '@open-ent/client';
 import {
   AppHeader as BaseAppHeader,
   Breadcrumb,
   LoadingScreen,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import { useQueryClient } from '@tanstack/react-query';
 import { Suspense, lazy } from 'react';
 import { useParams } from 'react-router-dom';

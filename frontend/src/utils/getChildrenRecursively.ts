@@ -1,4 +1,4 @@
-import { flattenTree, TreeItem } from '@edifice.io/react';
+import { flattenTree, TreeItem } from '@open-ent/react';
 import { Page } from '~/models';
 type Child = {
   id: string;

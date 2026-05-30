@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Flex, Stepper, useEdificeClient } from '@edifice.io/react';
+import { Flex, Stepper, useEdificeClient } from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
-import { IconClock } from '@edifice.io/react/icons';
+import { IconClock } from '@open-ent/react/icons';
 import {
   usePagesAssistantActions,
   useFormValuesStore,
 } from '~/store/assistant';
 import { assistantService } from '~/services/api/assistant/assistant.service';
-import { odeServices } from '@edifice.io/client';
+import { odeServices } from '@open-ent/client';
 import { WikiDto } from '~/models';
 import Lottie from 'lottie-react';
 import loadingAnimation from '../animations/loading.json';

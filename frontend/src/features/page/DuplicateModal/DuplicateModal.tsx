@@ -1,4 +1,4 @@
-import { IResource } from '@edifice.io/client';
+import { IResource } from '@open-ent/client';
 import {
   Alert,
   Button,
@@ -6,9 +6,9 @@ import {
   Modal,
   Tooltip,
   useEdificeClient,
-} from '@edifice.io/react';
-import { IconInfoCircle } from '@edifice.io/react/icons';
-import { InternalLinker } from '@edifice.io/react/multimedia';
+} from '@open-ent/react';
+import { IconInfoCircle } from '@open-ent/react/icons';
+import { InternalLinker } from '@open-ent/react/multimedia';
 import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFilteredWikis } from '~/hooks/useFilteredWikis';

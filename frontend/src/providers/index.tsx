@@ -1,9 +1,9 @@
-import { ERROR_CODE } from '@edifice.io/client';
+import { ERROR_CODE } from '@open-ent/client';
 import {
   EdificeClientProvider,
   EdificeScreebProvider,
   EdificeThemeContext,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   QueryCache,
   QueryClient,

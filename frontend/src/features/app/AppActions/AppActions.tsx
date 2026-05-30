@@ -4,13 +4,13 @@ import {
   IconButton,
   IconButtonProps,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconOptions,
   IconPrint,
   IconSettings,
   IconShare,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { RefAttributes } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Fragment } from 'react/jsx-runtime';

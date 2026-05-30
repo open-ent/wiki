@@ -1,4 +1,4 @@
-import { ID } from '@edifice.io/client';
+import { ID } from '@open-ent/client';
 import {
   Avatar,
   Badge,
@@ -6,8 +6,8 @@ import {
   useDate,
   useDirectory,
   useEdificeClient,
-} from '@edifice.io/react';
-import { IconUndo, IconWand } from '@edifice.io/react/icons';
+} from '@open-ent/react';
+import { IconUndo, IconWand } from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 import { useRevision } from '~/hooks/useRevision/useRevision';
 import { Page } from '~/models';

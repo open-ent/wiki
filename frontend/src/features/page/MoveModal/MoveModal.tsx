@@ -1,5 +1,5 @@
-import { ID } from '@edifice.io/client';
-import { Alert, Button, LoadingScreen, Modal, Tree } from '@edifice.io/react';
+import { ID } from '@open-ent/client';
+import { Alert, Button, LoadingScreen, Modal, Tree } from '@open-ent/react';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFilterCurrentPageFromTree } from '~/hooks/useFilterCurrentPageFromTree';

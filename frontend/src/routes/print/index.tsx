@@ -1,7 +1,7 @@
-import { odeServices } from '@edifice.io/client';
-import { checkUserRight } from '@edifice.io/react';
-import { CommentProvider } from '@edifice.io/react/comments';
-import { Editor, EditorRef } from '@edifice.io/react/editor';
+import { odeServices } from '@open-ent/client';
+import { checkUserRight } from '@open-ent/react';
+import { CommentProvider } from '@open-ent/react/comments';
+import { Editor, EditorRef } from '@open-ent/react/editor';
 import { QueryClient } from '@tanstack/react-query';
 import { useEffect, useRef } from 'react';
 import {

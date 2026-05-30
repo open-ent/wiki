@@ -1,4 +1,4 @@
-import { TreeItem } from '@edifice.io/react';
+import { TreeItem } from '@open-ent/react';
 
 /**
  * This function filters the current page and all its children from the tree data recursively

@@ -1,4 +1,4 @@
-import { ToolbarItem, useBreakpoint } from '@edifice.io/react';
+import { ToolbarItem, useBreakpoint } from '@open-ent/react';
 import {
   IconCopy,
   IconDelete,
@@ -6,7 +6,7 @@ import {
   IconForgoing,
   IconPrint,
   IconSee,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useWikiActions } from '~/store';

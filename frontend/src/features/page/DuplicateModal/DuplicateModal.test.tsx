@@ -34,7 +34,7 @@ vi.mock('~/services', () => ({
   useDuplicatePage: mocks.useDuplicatePage,
 }));
 
-vi.mock('@edifice.io/client', () => ({
+vi.mock('@open-ent/client', () => ({
   odeServices: {
     session: vi.fn().mockReturnValue({
       getUser: vi.fn().mockResolvedValue({
@@ -59,10 +59,10 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-vi.mock('@edifice.io/react/multimedia', async () => {
+vi.mock('@open-ent/react/multimedia', async () => {
   const actual = await vi.importActual<
-    typeof import('@edifice.io/react/multimedia')
-  >('@edifice.io/react/multimedia');
+    typeof import('@open-ent/react/multimedia')
+  >('@open-ent/react/multimedia');
   return {
     ...actual,
     InternalLinker: vi.fn(({ onSelect }) => (

@@ -1,4 +1,4 @@
-import { AppHeader, Breadcrumb } from '@edifice.io/react';
+import { AppHeader, Breadcrumb } from '@open-ent/react';
 import { render, screen, waitFor } from '~/mocks/setup';
 
 const mockWikiApp = {

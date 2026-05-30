@@ -1,4 +1,4 @@
-import { SortableTree } from '@edifice.io/react';
+import { SortableTree } from '@open-ent/react';
 
 // TODO: Implement the full Pages Assistant left pane functionality
 export const PagesAssistantLeftPane = () => {

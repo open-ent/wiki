@@ -4,12 +4,12 @@ import {
   Grid,
   Stepper,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconQuestion,
   IconRafterLeft,
   IconRafterRight,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Form, useNavigate, useParams } from 'react-router-dom';

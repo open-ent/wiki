@@ -1,4 +1,4 @@
-import { LoadingScreen } from '@edifice.io/react';
+import { LoadingScreen } from '@open-ent/react';
 import { lazy, Suspense } from 'react';
 import { FormPage } from '~/features';
 import { useRevision } from '~/hooks/useRevision/useRevision';

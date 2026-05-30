@@ -1,11 +1,11 @@
 import { Suspense, useEffect } from 'react';
 
-import { LoadingScreen, useEdificeTheme } from '@edifice.io/react';
+import { LoadingScreen, useEdificeTheme } from '@open-ent/react';
 import { QueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { LoaderFunctionArgs, useParams } from 'react-router-dom';
 
-import { odeServices } from '@edifice.io/client';
+import { odeServices } from '@open-ent/client';
 import ConfirmVisibilityModal from '~/features/page/ConfirmVisibilityModal/ConfirmVisibilityModal';
 import DeletePageModal from '~/features/page/DeletePageModal/DeletePageModal';
 import { DuplicateModal } from '~/features/page/DuplicateModal/DuplicateModal';

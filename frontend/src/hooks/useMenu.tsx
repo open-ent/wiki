@@ -1,5 +1,5 @@
-import { useEdificeClient } from '@edifice.io/react';
-import { IconViewList } from '@edifice.io/react/icons';
+import { useEdificeClient } from '@open-ent/react';
+import { IconViewList } from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 import {
   matchPath,

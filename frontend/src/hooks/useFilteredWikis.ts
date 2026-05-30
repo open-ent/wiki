@@ -1,5 +1,5 @@
-import { IResource } from '@edifice.io/client';
-import { useUser } from '@edifice.io/react';
+import { IResource } from '@open-ent/client';
+import { useUser } from '@open-ent/react';
 import { useEffect, useState } from 'react';
 /**
  * Hook to filter wikis based on user rights
