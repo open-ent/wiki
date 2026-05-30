@@ -1,8 +1,8 @@
-import { PromotionCard, useEdificeClient } from '@edifice.io/react';
+import { PromotionCard, useEdificeClient } from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 import AIButton from '~/components/AIButton/AIButton';
 import { useNavigate } from 'react-router-dom';
-import { IconAiFill, IconExercizerAi } from '@edifice.io/react/icons';
+import { IconAiFill, IconExercizerAi } from '@open-ent/react/icons';
 
 export const PagesAssistantAICard = () => {
   const { appCode } = useEdificeClient();

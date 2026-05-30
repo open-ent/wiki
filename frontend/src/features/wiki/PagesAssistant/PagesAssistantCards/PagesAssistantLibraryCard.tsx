@@ -3,8 +3,8 @@ import {
   PromotionCard,
   useEdificeClient,
   useLibraryUrl,
-} from '@edifice.io/react';
-import { IconExternalLink, IconTeacher } from '@edifice.io/react/icons';
+} from '@open-ent/react';
+import { IconExternalLink, IconTeacher } from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 
 export const PagesAssistantLibraryCard = () => {

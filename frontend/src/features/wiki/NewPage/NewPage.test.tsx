@@ -29,7 +29,7 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-vi.mock('@edifice.io/react/editor', () => ({
+vi.mock('@open-ent/react/editor', () => ({
   Editor: React.forwardRef(() => <div />),
 }));
 

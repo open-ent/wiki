@@ -1,4 +1,4 @@
-import { ID } from '@edifice.io/client';
+import { ID } from '@open-ent/client';
 import {
   Avatar,
   Badge,
@@ -9,7 +9,7 @@ import {
   useDate,
   useDirectory,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconCopy,
   IconDelete,
@@ -19,7 +19,7 @@ import {
   IconHide,
   IconOptions,
   IconSee,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import { RefAttributes } from 'react';
 import { useTranslation } from 'react-i18next';

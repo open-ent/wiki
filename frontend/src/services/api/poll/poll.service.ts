@@ -1,4 +1,4 @@
-import { odeServices } from '@edifice.io/client';
+import { odeServices } from '@open-ent/client';
 import { Poll, PollRequestPayload } from './poll.types';
 
 export const IMPORT_PDF_POLL_ID = 'import-pdf';

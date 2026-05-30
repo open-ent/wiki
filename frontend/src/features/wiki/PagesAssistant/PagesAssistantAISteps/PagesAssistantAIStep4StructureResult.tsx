@@ -4,14 +4,14 @@ import {
   Grid,
   Stepper,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconAiFill,
   IconArrowRight,
   IconEdit,
   IconTextPage,
   IconWand,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -21,7 +21,7 @@ import {
 } from '~/store/assistant';
 import AIButton from '~/components/AIButton/AIButton';
 import { WikiDto } from '~/models';
-import { odeServices } from '@edifice.io/client';
+import { odeServices } from '@open-ent/client';
 import { baseURL } from '~/services';
 
 export const PagesAssistantAIStep4StructureResult = () => {

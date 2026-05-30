@@ -7,7 +7,7 @@ import {
   Select,
   Stepper,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 import { PagesAssistantAIStep2FormValues } from '~/services/api/assistant/assistant.types';
 import {
@@ -15,7 +15,7 @@ import {
   usePagesAssistantActions,
 } from '~/store/assistant';
 import { Controller, useForm } from 'react-hook-form';
-import { IconRafterLeft, IconRafterRight } from '@edifice.io/react/icons';
+import { IconRafterLeft, IconRafterRight } from '@open-ent/react/icons';
 import { Form, useNavigate, useParams } from 'react-router-dom';
 import { useMemo } from 'react';
 import { useSubjects } from './useSubjects';

@@ -2,7 +2,7 @@ import {
   AssistantGenerateRequest,
   AssistantGenerateResponse,
 } from './assistant.types';
-import { odeServices } from '@edifice.io/client';
+import { odeServices } from '@open-ent/client';
 
 /**
  * Services for Assistant API

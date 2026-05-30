@@ -1,4 +1,4 @@
-import { Button, Modal, useEdificeClient } from '@edifice.io/react';
+import { Button, Modal, useEdificeClient } from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 
 export const CancelModal = ({

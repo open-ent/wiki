@@ -5,10 +5,10 @@ import {
   Flex,
   LoadingScreen,
   useEdificeClient,
-} from '@edifice.io/react';
-import { ViewsCounter, ViewsModal } from '@edifice.io/react/audience';
-import { CommentProvider } from '@edifice.io/react/comments';
-import { Editor, EditorRef } from '@edifice.io/react/editor';
+} from '@open-ent/react';
+import { ViewsCounter, ViewsModal } from '@open-ent/react/audience';
+import { CommentProvider } from '@open-ent/react/comments';
+import { Editor, EditorRef } from '@open-ent/react/editor';
 import { QueryClient } from '@tanstack/react-query';
 import Lottie from 'lottie-react';
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';

@@ -1,4 +1,4 @@
-import { ID } from '@edifice.io/client';
+import { ID } from '@open-ent/client';
 import {
   checkUserRight,
   Dropdown,
@@ -9,8 +9,8 @@ import {
   TreeItem,
   useToast,
   useTrashedResource,
-} from '@edifice.io/react';
-import { IconHide, IconPlus } from '@edifice.io/react/icons';
+} from '@open-ent/react';
+import { IconHide, IconPlus } from '@open-ent/react/icons';
 import { QueryClient } from '@tanstack/react-query';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import clsx from 'clsx';

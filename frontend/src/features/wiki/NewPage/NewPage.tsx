@@ -1,5 +1,5 @@
-import { Button, useEdificeClient } from '@edifice.io/react';
-import { IconPlus } from '@edifice.io/react/icons';
+import { Button, useEdificeClient } from '@open-ent/react';
+import { IconPlus } from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 import { useMatch, useNavigate } from 'react-router-dom';
 

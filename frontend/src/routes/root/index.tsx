@@ -1,4 +1,4 @@
-import { Layout, LoadingScreen, useEdificeClient } from '@edifice.io/react';
+import { Layout, LoadingScreen, useEdificeClient } from '@open-ent/react';
 
 import { matchPath, Outlet, ScrollRestoration } from 'react-router-dom';
 import { basename } from '..';

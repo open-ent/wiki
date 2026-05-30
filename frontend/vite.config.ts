@@ -45,10 +45,23 @@ export default ({ mode }: { mode: string }) => {
     cacheDir: './node_modules/.vite/wiki',
 
     resolve: {
+      // @open-ent/explorer embarque ses propres copies de @open-ent/{client,react} → on force
+      // une instance unique (sinon odeServices non initialisé → Explorer plante).
+      dedupe: [
+        'react',
+        'react-dom',
+        '@tanstack/react-query',
+        'react-i18next',
+        'i18next',
+        '@open-ent/client',
+        '@open-ent/react',
+        '@open-ent/bootstrap',
+        '@open-ent/explorer',
+      ],
       alias: {
         '@images': resolve(
           __dirname,
-          'node_modules/@edifice.io/bootstrap/dist/images',
+          'node_modules/@open-ent/bootstrap/dist/images',
         ),
       },
     },
@@ -123,7 +136,7 @@ export default ({ mode }: { mode: string }) => {
       },
       server: {
         deps: {
-          inline: ['@edifice.io/react'],
+          inline: ['@open-ent/react'],
         },
       },
     },

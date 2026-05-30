@@ -1,7 +1,7 @@
 import { ChangeEvent, forwardRef, Ref } from 'react';
 
 import clsx from 'clsx';
-import { Flex, Radio } from '@edifice.io/react';
+import { Flex, Radio } from '@open-ent/react';
 
 export interface RadioCardProps {
   /**

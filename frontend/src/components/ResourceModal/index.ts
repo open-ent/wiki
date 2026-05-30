@@ -1,3 +1,3 @@
-import { ResourceModal as UpdateModal } from '@edifice.io/react/modals';
+import { ResourceModal as UpdateModal } from '@open-ent/react/modals';
 
 export default UpdateModal;

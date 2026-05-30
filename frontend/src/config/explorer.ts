@@ -1,7 +1,7 @@
-import { AppParams } from 'ode-explorer/lib';
+import { AppParams } from '@open-ent/explorer/lib';
 import { WikiResourceService } from '~/services/resource';
 import { workflows } from './workflows';
-import { IResource } from '@edifice.io/client';
+import { IResource } from '@open-ent/client';
 import { basename } from '~/routes';
 
 export const explorerConfig: AppParams = {

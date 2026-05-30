@@ -1,4 +1,4 @@
-import { Button, Checkbox, Modal, Radio } from '@edifice.io/react';
+import { Button, Checkbox, Modal, Radio } from '@open-ent/react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { useCheckablePrint } from '~/hooks/useCheckablePrint';

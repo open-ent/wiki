@@ -5,7 +5,7 @@ import {
   ResourceService,
   UpdateParameters,
   UpdateResult,
-} from '@edifice.io/client';
+} from '@open-ent/client';
 
 const APP = 'wiki';
 const RESOURCE = 'wiki';

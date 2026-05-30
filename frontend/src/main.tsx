@@ -2,13 +2,13 @@ import React from 'react';
 
 import { createRoot } from 'react-dom/client';
 
-import { EdificeThemeProvider } from '@edifice.io/react';
+import { EdificeThemeProvider } from '@open-ent/react';
 import { RouterProvider } from 'react-router-dom';
 import './i18n';
 import { Providers, queryClient } from './providers';
 import { router } from './routes';
 
-import '@edifice.io/bootstrap/dist/index.css';
+import '@open-ent/bootstrap/dist/index.css';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement!);
