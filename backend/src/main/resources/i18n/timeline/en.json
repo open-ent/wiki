@@ -1,1 +1,24 @@
-{}
+{
+  "timeline.wiki.has.commented.page": "commented on the page",
+  "timeline.wiki.has.created.page": "created the page",
+  "timeline.wiki.has.deleted.page": "deleted the page",
+  "timeline.wiki.has.deleted.page.multiple": "(several pages)",
+  "timeline.wiki.has.shared": "shared the course with you",
+  "timeline.wiki.has.updated.page": "made the page visible",
+  "timeline.wiki.in": "in the course",
+  "timeline.wiki.of": "of the course",
+  "wiki": "Courses and Wiki",
+  "wiki.comment-added": "Comment in a course (only for the page author and the course managers)",
+  "wiki.page-created": "New page in a course",
+  "wiki.page-deleted": "Deletion of a page I am the author of",
+  "wiki.page-updated": "Edit of a page in a course",
+  "wiki.push.notif.comment-added": "Courses and Wiki: Comment in a course (only for the page author and the course managers)",
+  "wiki.push.notif.page-created": "Courses and Wiki: New page in a course",
+  "wiki.push.notif.page-deleted.body": "{0} deleted the page {1}, of which you are the author, for the course {2}",
+  "wiki.push.notif.page-deleted.title": "Courses and Wiki: Page deletion",
+  "wiki.push.notif.page-updated.body": "{0} made the page {1} visible, of which you are the author, for the course {2}",
+  "wiki.push.notif.page-updated.title": "Courses and Wiki: Page edit",
+  "wiki.push.notif.pages-deleted.body": "{0} deleted pages, of which you are the author, for the course {1}",
+  "wiki.push.notif.shared.title": "Courses and Wiki: Course sharing",
+  "wiki.shared": "Course sharing"
+}
