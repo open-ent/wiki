@@ -8,7 +8,9 @@ import './i18n';
 import { Providers, queryClient } from './providers';
 import { router } from './routes';
 
-import '@open-ent/bootstrap/dist/index.css';
+// Le bootstrap openent n'est plus bundlé : il est chargé au runtime via
+// <link href="/assets/themes/openent-bootstrap/index.css"> dans index.html
+// (cf. README-THEME). Permet de changer le look sans recompiler le module.
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement!);

@@ -1,5 +1,8 @@
 # Add files here to ignore them from prettier formatting
 /dist
+# Le store pnpm local (déjà dans .gitignore) : `prettier --write .` le parcourait et
+# échouait sur des .d.ts empaquetés, ce qui faisait planter le hook de pre-commit.
+/.pnpm-store
 /coverage
 /.nx/cache
 /.nx/workspace-data
