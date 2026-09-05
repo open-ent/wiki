@@ -37,8 +37,7 @@ jobs:
           pnpm config set auto-install-peers true
 
       # Install project dependencies using pnpm package manager
-      # Without --frozen-lockfile since we don't commit pnpm-lock.yaml
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile
       - run: pnpm exec nx test
 
         env:
