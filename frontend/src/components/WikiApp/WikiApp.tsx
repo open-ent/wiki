@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 import { queryClient } from '~/providers';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { EdificeClientProvider } from '@edifice.io/react';
-import { EdificeThemeProvider } from '@edifice.io/react';
+import { EdificeClientProvider } from '@open-ent/react';
+import { EdificeThemeProvider } from '@open-ent/react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { LoadingScreen } from '@edifice.io/react';
+import { LoadingScreen } from '@open-ent/react';
 import { wikiRoutes } from '~/routes';
 import WikiAppProvider from './providers/WikiAppProvider';
 import { ActionDropdownMenuOptions } from '~/features';

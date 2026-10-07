@@ -1,5 +1,5 @@
-import { useEdificeClient, useScreeb } from '@edifice.io/react';
-import { IconArrowRight } from '@edifice.io/react/icons';
+import { useEdificeClient } from '@open-ent/react';
+import { IconArrowRight } from '@open-ent/react/icons';
 import { useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -8,16 +8,10 @@ import AIButton from '~/components/AIButton/AIButton';
 import { WikiDto } from '~/models';
 import { wikiQueryOptions } from '~/services';
 
-// useScreeb() throws when no ScreebProvider is mounted (i.e. no screeb-app-id
-// configured), instead of returning undefined gracefully. Guard it here so the
-// AI assistant keeps working normally when Screeb is not configured/enabled.
-const useSafeTriggerSurvey = () => {
-  try {
-    return useScreeb().triggerSurvey;
-  } catch {
-    return undefined;
-  }
-};
+// Screeb (enquêtes Edifice) n'existe pas dans @open-ent : aucune enquête à déclencher.
+const useSafeTriggerSurvey = ():
+  | ((...args: unknown[]) => unknown)
+  | undefined => undefined;
 
 export const ButtonAIScreebActivate = ({
   generatedWiki,

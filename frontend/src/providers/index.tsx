@@ -1,7 +1,6 @@
 import { ERROR_CODE } from '@open-ent/client';
 import {
   EdificeClientProvider,
-  EdificeScreebProvider,
   EdificeThemeContext,
 } from '@open-ent/react';
 import {
@@ -33,7 +32,6 @@ export const queryClient = new QueryClient({
 
 export const Providers = ({
   children,
-  withScreeb = true,
 }: {
   children: ReactNode;
   withScreeb?: boolean;
@@ -45,13 +43,8 @@ export const Providers = ({
           app: 'wiki',
         }}
       >
-        {withScreeb ? (
-          <EdificeScreebProvider>
-            <WikiAppProvider header={true}>{children}</WikiAppProvider>
-          </EdificeScreebProvider>
-        ) : (
-          <WikiAppProvider header={true}>{children}</WikiAppProvider>
-        )}
+        {/* Screeb (enquêtes Edifice) n'existe pas dans @open-ent : pas de fournisseur. */}
+        <WikiAppProvider header={true}>{children}</WikiAppProvider>
       </EdificeClientProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
