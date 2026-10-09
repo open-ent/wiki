@@ -34,4 +34,5 @@ src/main/resources/public/*
 !src/main/resources/public/js
 !src/main/resources/public/template
 src/main/resources/view/index.html
+src/main/resources/view/wiki.html
 # src/main/resources/view
