@@ -43,8 +43,8 @@ importers:
         specifier: 23.8.1
         version: 23.8.1
       i18next-http-backend:
-        specifier: 2.4.2
-        version: 2.4.2
+        specifier: 4.0.2
+        version: 4.0.2
       lottie-react:
         specifier: 2.4.1
         version: 2.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -885,7 +885,7 @@ packages:
     engines: {node: 18 || 20}
 
   '@open-ent/react@2.5.30-patched':
-    resolution: {integrity: sha512-Zi5cZaA1tHgwmnPx8eLS8HA/rxqQl6MTJ+gpKg+l/X9Pfphk67rM/ofipRr1mCaAnMVAQdeT4UIMW1yL0iIzVA==, tarball: https://npm.pkg.github.com/download/@open-ent/react/2.5.30-patched/6a919ba5eb5e54cc5d4ca5ac0eb96f8dfb7ef4a2}
+    resolution: {integrity: sha512-Ib2vgajZJ6oG/OfcFgCc+zSKsgas2kWchUppWNqVmMltBn+Ts/VYMF61MHxPFMLAP0Rk4dakFeF5gRbWQ5Sscg==, tarball: https://npm.pkg.github.com/download/@open-ent/react/2.5.30-patched/657cafa5a2dae361b0a3925407fed809619a7a7f}
     peerDependencies:
       '@react-spring/web': 9.7.5
       '@tanstack/react-query': 5.62.7
@@ -2561,6 +2561,10 @@ packages:
 
   i18next-http-backend@2.4.2:
     resolution: {integrity: sha512-wKrgGcaFQ4EPjfzBTjzMU0rbFTYpa0S5gv9N/d8WBmWS64+IgJb7cHddMvV+tUkse7vUfco3eVs2lB+nJhPo3w==}
+
+  i18next-http-backend@4.0.2:
+    resolution: {integrity: sha512-oay62dIB2kL7+WHzoUXBjWfL3+mwijD3pQkQkIEaRLhy6kjXxUhrRenV0gInwlCASAaJaDy94+XvYizK+cAGdA==}
+    engines: {node: '>=18'}
 
   i18next@23.8.1:
     resolution: {integrity: sha512-Yhe6oiJhigSh64ev7nVVywu7vHjuUG41MRmFKNwphbkadqTL1ozZFBQISflY7/ju+gL6I/SPfI1GgWQh1yYArA==}
@@ -7115,6 +7119,8 @@ snapshots:
       cross-fetch: 4.0.0
     transitivePeerDependencies:
       - encoding
+
+  i18next-http-backend@4.0.2: {}
 
   i18next@23.8.1:
     dependencies:
