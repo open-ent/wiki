@@ -1,9 +1,21 @@
-import { describe, expect, it, vi } from 'vitest';
-
-const http = { isResponseError: vi.fn(), latestResponse: { statusText: 'Forbidden' } };
-vi.mock('@open-ent/client', () => ({ odeServices: { http: () => http } }));
+import { odeServices } from '@open-ent/client';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { guardWikiService } from '~/services/api';
+
+// Espion sur l'instance plutôt que vi.mock du module : le setup des tests (providers) charge déjà
+// ~/services/api avec le vrai @open-ent/client, un vi.mock arriverait après coup et serait ignoré.
+const http = {
+  isResponseError: vi.fn(),
+  latestResponse: { statusText: 'Forbidden' },
+};
+let httpSpy: ReturnType<typeof vi.spyOn>;
+beforeAll(() => {
+  httpSpy = vi
+    .spyOn(odeServices, 'http')
+    .mockReturnValue(http as unknown as ReturnType<typeof odeServices.http>);
+});
+afterAll(() => httpSpy.mockRestore());
 
 const service = guardWikiService({
   getPage: async () => ({ title: 'x' }),
