@@ -217,6 +217,64 @@ public class WikiController extends MongoDbControllerHelper {
 	}
 
 	/**
+	 * Routes de vue React ajoutées pour qu'un rechargement (F5) ou un lien direct sur ces écrans
+	 * serve l'application au lieu d'un 404. Ex. : F5 sur /wiki/id/abc/page/123/destroy.
+	 */
+	@Get("/id/:id/pages/destroy")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewDestroyPages(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/pages/assistant/ai/step3StructureLoading")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewAssistantAIStep3StructureLoadingPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/pages/assistant/ai/step4StructureResult")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewAssistantAIStep4StructureResultPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/page/:pageId/destroy")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewDestroyPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/page/:pageId/subpage/create")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewCreateSubPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/page/:pageId/oldformat")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewOldFormatPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/page/:pageId/oldformat/edit")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewOldFormatEditPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/page/:pageId/oldformat/destroy")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewOldFormatDestroyPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	@Get("/id/:id/page/:pageId/oldformat/subpage/create")
+	@SecuredAction(value = "", type = ActionType.AUTHENTICATED)
+	public void viewOldFormatCreateSubPage(HttpServerRequest request) {
+		renderView(request, new JsonObject(), "index.html", null);
+	}
+
+	/**
      * Display react front print /print/id/:id
      * @param request
      */
