@@ -396,4 +396,31 @@ const createWikiService = (baseURL: string) => ({
 });
 
 export const baseURL = '/wiki';
-export const wikiService = createWikiService(baseURL);
+
+/**
+ * Le client HTTP du socle ne lève pas sur erreur : il renvoie la réponse d'erreur.
+ * - lectures (`get*`) : on lève, l'écran affiche son erreur au lieu de traiter
+ *   la réponse d'erreur comme des données (ex. page 403 lue comme un wiki vide) ;
+ * - écritures : on renvoie `{ error }`, ce que testent les écrans (`data.error`),
+ *   test qui ne se déclenchait jamais (ex. suppression refusée annoncée « réussie »).
+ */
+export const guardWikiService = <T extends Record<string, any>>(service: T): T => {
+  const guarded: Record<string, unknown> = {};
+  for (const [name, fn] of Object.entries(service)) {
+    if (typeof fn !== 'function') {
+      guarded[name] = fn;
+      continue;
+    }
+    guarded[name] = async (...args: unknown[]) => {
+      const result = await fn.apply(service, args);
+      const http = odeServices.http();
+      if (!http.isResponseError()) return result;
+      const message = http.latestResponse?.statusText || 'http-error';
+      if (name.startsWith('get')) throw new Error(message);
+      return { error: message };
+    };
+  }
+  return guarded as T;
+};
+
+export const wikiService = guardWikiService(createWikiService(baseURL));
