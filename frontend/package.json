@@ -26,10 +26,7 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "pnpm run format",
-      "pnpm run lint"
-    ]
+    "**/*.{ts,tsx}": ["prettier --write", "eslint --fix --no-warn-ignored"]
   },
   "dependencies": {
     "@open-ent/bootstrap": "2.5.30-patched",
