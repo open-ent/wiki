@@ -26,7 +26,10 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": ["prettier --write", "eslint --fix --no-warn-ignored"]
+    "**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix --no-warn-ignored"
+    ]
   },
   "dependencies": {
     "@open-ent/bootstrap": "2.5.30-patched",
@@ -39,7 +42,6 @@
     "i18next": "23.8.1",
     "i18next-http-backend": "2.4.2",
     "lottie-react": "2.4.1",
-    "ode-explorer": "2.6.13",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-error-boundary": "4.0.13",
