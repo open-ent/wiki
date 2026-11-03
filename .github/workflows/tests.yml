@@ -36,9 +36,18 @@ jobs:
           pnpm config set //registry.tiptap.dev/:_authToken ${{ secrets.TIPTAP_PRO_TOKEN }}
           pnpm config set auto-install-peers true
 
-      # Install project dependencies using pnpm package manager
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm exec nx test
-
+      - name: Install frontend dependencies
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.OPENENT_PACKAGES_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          TIPTAP_PRO_TOKEN: ${{ secrets.TIPTAP_PRO_TOKEN }}
+        # Le lock fige une URL de tarball @open-ent que GitHub Packages rejette en 409
+        # après republication : --frozen-lockfile interdit toute re-résolution.
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Run tests
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.OPENENT_PACKAGES_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          TIPTAP_PRO_TOKEN: ${{ secrets.TIPTAP_PRO_TOKEN }}
+        run: pnpm exec nx test
