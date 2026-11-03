@@ -1,10 +1,4 @@
-import {
-  Button,
-  Flex,
-  Grid,
-  Stepper,
-  useEdificeClient,
-} from '@open-ent/react';
+import { Button, Flex, Grid, Stepper, useEdificeClient } from '@open-ent/react';
 import {
   IconQuestion,
   IconRafterLeft,
@@ -28,7 +22,7 @@ export const PagesAssistantAIStep1Form = () => {
   const navigate = useNavigate();
   const params = useParams();
 
-  const { collegeLevels, lyceeLevels } = useLevels();
+  const { primaryLevels, collegeLevels, lyceeLevels } = useLevels();
   const formValues = useFormValuesStore();
   const { setFormValues } = usePagesAssistantActions();
 
@@ -99,6 +93,32 @@ export const PagesAssistantAIStep1Form = () => {
                   <h3 className="mb-12">
                     {t('wiki.assistant.ai.step1.level', { ns: appCode })}
                   </h3>
+                  {/* PRIMARY LEVELS */}
+                  <p className="fw-bold pb-8">
+                    {t('wiki.assistant.ai.step1.level.ecole', { ns: appCode })}
+                  </p>
+                  <Flex gap="8" className="mb-12">
+                    {primaryLevels.map((level) => (
+                      <Controller
+                        key={level.value}
+                        name="level"
+                        control={control}
+                        rules={{ required: true }}
+                        render={({ field: { value, onChange } }) => (
+                          <SimpleRadioCard
+                            label={level.value}
+                            value={level.value}
+                            groupName="levels"
+                            selectedValue={value}
+                            onChange={(v) => {
+                              onChange(v);
+                              handleLevelChange();
+                            }}
+                          />
+                        )}
+                      />
+                    ))}
+                  </Flex>
                   <Grid className="gap-8">
                     {/* COLLEGE LEVELS */}
                     <Grid.Col sm="5" md="5" lg="5" xl="7">

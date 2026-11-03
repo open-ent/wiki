@@ -49,9 +49,11 @@ public interface WikiService extends AudienceRightChecker {
      * @param dto       The DTO containing all required fields for wiki generation (level, subject, sequence, keywords).
      * @param sessionId The session ID extracted from the HTTP request.
      * @param userAgent The User-Agent string extracted from the HTTP request.
+     * @param cookies   The Cookie header of the HTTP request (signed session cookie), forwarded to the
+     *                  dashboard AI service so that it authenticates the user.
      * @return Future with the generated wiki ID.
      */
-	Future<String> generateWiki(UserInfos user, WikiGenerateRequest dto, String sessionId, String userAgent);
+	Future<String> generateWiki(UserInfos user, WikiGenerateRequest dto, String sessionId, String userAgent, String cookies);
 
 	default void getWiki(String id, Handler<Either<String, JsonObject>> handler){
 		getWiki(id, false, handler);

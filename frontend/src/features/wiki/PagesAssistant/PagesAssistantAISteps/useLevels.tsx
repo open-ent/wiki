@@ -25,9 +25,11 @@ import stlIcon from '../icons/subjects/stl.png';
 import stmgIcon from '../icons/subjects/stmg.png';
 import svtIcon from '../icons/subjects/svt.png';
 import technologieIcon from '../icons/subjects/technologie.png';
+import { primaryLevels } from './primaryLevels';
 
 /**
- * Hook that returns the College and Lycee levels tree:
+ * Hook that returns the primary school (CP→CM2, from the official programmes), College and Lycee
+ * levels tree:
  * - A level has an array of Subjects,
  * - A subject has an array of Sequences
  */
@@ -1194,6 +1196,7 @@ export const useLevels = () => {
   ];
 
   return {
+    primaryLevels,
     collegeLevels,
     lyceeLevels,
   };

@@ -80,7 +80,7 @@ public class WikiServiceMongoImpl extends MongoDbCrudService implements WikiServ
 	private final AudienceHelper audienceHelper;
 	private final ResourceBrokerPublisher resourcePublisher;
 
-	private final EdificeWikiGeneratorPublisher aiWikiPublisher;
+	private final WikiContentGenerator contentGenerator;
 
     private final String plateformId;
 
@@ -88,7 +88,8 @@ public class WikiServiceMongoImpl extends MongoDbCrudService implements WikiServ
                                 final String collection, final WikiExplorerPlugin plugin,
 								final IContentTransformerClient contentTransformerClient,
 								final IContentTransformerEventRecorder contentTransformerEventRecorder,
-								final AudienceHelper audienceHelper) {
+								final AudienceHelper audienceHelper,
+								final JsonObject config) {
 		super(collection);
 		this.collection = collection;
 		this.mongo = MongoDb.getInstance();
@@ -103,7 +104,14 @@ public class WikiServiceMongoImpl extends MongoDbCrudService implements WikiServ
 				vertx,
 				new AddressParameter("application", Wiki.APPLICATION)
 		);
-		this.aiWikiPublisher = new EdificeWikiGeneratorPublisher(vertx);
+		// « Générer avec l'IA » : le service IA du dashboard par défaut, celui d'Edifice sur demande.
+		if ("edifice".equals(config.getString("ai-generator", "dashboard"))) {
+			final EdificeWikiGeneratorPublisher edifice = new EdificeWikiGeneratorPublisher(vertx);
+			this.contentGenerator = (request, cookies) -> edifice.createWiki(request);
+		} else {
+			this.contentGenerator = new DashboardWikiContentGenerator(vertx,
+					config.getString("ai-dashboard-url", config.getString("host", "http://localhost")), this);
+		}
         this.plateformId = pfId;
 	}
 
@@ -1495,7 +1503,7 @@ public class WikiServiceMongoImpl extends MongoDbCrudService implements WikiServ
 	}
 	
 	@Override
-	public Future<String> generateWiki(UserInfos user, WikiGenerateRequest dto, String sessionId, String userAgent) {
+	public Future<String> generateWiki(UserInfos user, WikiGenerateRequest dto, String sessionId, String userAgent, String cookies) {
 		final Promise<String> promise = Promise.promise();
 
 		if (dto.getWikiId() != null && !dto.getWikiId().trim().isEmpty()) {
@@ -1542,7 +1550,7 @@ public class WikiServiceMongoImpl extends MongoDbCrudService implements WikiServ
 								wikiId
 						);
 
-						aiWikiPublisher.createWiki(contentRequest);
+						contentGenerator.generate(contentRequest, cookies);
 						log.info("AI wiki regeneration started for wiki: " + wikiId);
 						promise.complete(wikiId);
 					} else {
@@ -1579,7 +1587,7 @@ public class WikiServiceMongoImpl extends MongoDbCrudService implements WikiServ
 							wikiId
 					);
 
-					aiWikiPublisher.createWiki(contentRequest);
+					contentGenerator.generate(contentRequest, cookies);
 					log.info("AI wiki generation started for wiki: " + wikiId);
 					promise.complete(wikiId);
 				} else {

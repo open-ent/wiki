@@ -119,7 +119,7 @@ public class Wiki extends BaseServer {
 
             final String platformId = config.getString("platform-name", "unnamed-pf");
             // Pass the Explorer plugin, the Tiptap transformer and the event recorder to the Wiki Service
-            WikiService wikiService = new WikiServiceMongoImpl(vertx, platformId, WIKI_COLLECTION, this.plugin, contentTransformerClient, contentTransformerEventRecorder, audienceHelper);
+            WikiService wikiService = new WikiServiceMongoImpl(vertx, platformId, WIKI_COLLECTION, this.plugin, contentTransformerClient, contentTransformerEventRecorder, audienceHelper, config);
 
             // Add Wiki Controller
             final WikiController wikiController = new WikiController(WIKI_COLLECTION, wikiConfig, this.plugin, wikiService);

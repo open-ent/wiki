@@ -62,6 +62,7 @@
   "wiki.assistant.ai.step1.button.add.sequence": "Suggérer une séquence",
   "wiki.assistant.ai.step1.description": "Choisissez le niveau et la matière de votre cours",
   "wiki.assistant.ai.step1.level": "Niveau",
+  "wiki.assistant.ai.step1.level.ecole": "École",
   "wiki.assistant.ai.step1.level.college": "Collège",
   "wiki.assistant.ai.step1.level.lycee": "Lycée",
   "wiki.assistant.ai.step1.select.level": "-- Choisir un niveau --",

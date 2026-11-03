@@ -7,14 +7,14 @@ import { useLevels } from './useLevels';
  * @returns an Object with a subjects property containing the subjects associated to the level
  */
 export const useSubjects = (level: string) => {
-  const { collegeLevels, lyceeLevels } = useLevels();
+  const { primaryLevels, collegeLevels, lyceeLevels } = useLevels();
 
   const subjects = useMemo(
     () =>
-      [...collegeLevels, ...lyceeLevels]
+      [...primaryLevels, ...collegeLevels, ...lyceeLevels]
         .find((lvl) => lvl.value === level)
         ?.subjects.sort((a, b) => (a.value > b.value ? 1 : -1)) ?? [],
-    [collegeLevels, lyceeLevels, level],
+    [primaryLevels, collegeLevels, lyceeLevels, level],
   );
 
   return {

@@ -134,6 +134,7 @@
   "wiki.all.pages": "All pages",
   "wiki.assistant.ai.step1.description": "Choose the level and subject of your course",
   "wiki.assistant.ai.step1.level": "Level",
+  "wiki.assistant.ai.step1.level.ecole": "Primary school",
   "wiki.assistant.ai.step1.level.college": "Middle school",
   "wiki.assistant.ai.step1.level.lycee": "High school",
   "wiki.assistant.ai.step1.select.level": "-- Choose a level --",

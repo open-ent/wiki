@@ -900,7 +900,8 @@ public class WikiController extends MongoDbControllerHelper {
 				WikiGenerateRequest dto = payload.mapTo(WikiGenerateRequest.class);
 				final String userAgent = Optional.ofNullable(request.getHeader("User-Agent")).orElse("");
 				final String sessionId = UserUtils.getSessionId(request).orElse("");
-				wikiService.generateWiki(user, dto, sessionId, userAgent)
+				final String cookies = Optional.ofNullable(request.getHeader("Cookie")).orElse("");
+				wikiService.generateWiki(user, dto, sessionId, userAgent, cookies)
 						.onSuccess(wikiId -> renderJson(request, new JsonObject().put("wikiId", wikiId)))
 						.onFailure(err -> {
 							log.error("Error generating wiki", err);
