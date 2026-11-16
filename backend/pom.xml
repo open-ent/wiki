@@ -92,6 +92,13 @@
             <groupId>org.entcore.edificewikigenerator</groupId>
             <artifactId>edifice-wiki-generator-client-vertx</artifactId>
             <version>${wiki-generator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- dépendance morte des broker-* 6.13-SNAPSHOT d'Edifice, disparue de leur Nexus -->
+                    <groupId>io.edifice</groupId>
+                    <artifactId>edifice-quarkus-contract-utils</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
