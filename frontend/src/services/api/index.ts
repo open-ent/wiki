@@ -403,6 +403,7 @@ export const baseURL = '/wiki';
  *   la réponse d'erreur comme des données (ex. page 403 lue comme un wiki vide) ;
  * - écritures : on renvoie `{ error }`, ce que testent les écrans (`data.error`),
  *   test qui ne se déclenchait jamais (ex. suppression refusée annoncée « réussie »).
+ * Vaut aussi quand l'appel REJETTE (ex. PUT de page en 500 rejeté avec le corps `{}`).
  */
 export const guardWikiService = <T extends Record<string, any>>(service: T): T => {
   const guarded: Record<string, unknown> = {};
@@ -412,11 +413,24 @@ export const guardWikiService = <T extends Record<string, any>>(service: T): T =
       continue;
     }
     guarded[name] = async (...args: unknown[]) => {
-      const result = await fn.apply(service, args);
+      const isRead = name.startsWith('get');
+      let result: unknown;
+      try {
+        result = await fn.apply(service, args);
+      } catch (error) {
+        // Certaines méthodes du client rejettent au lieu de renvoyer l'erreur : un PUT refusé en 500 rejetait
+        // avec le corps `{}`, l'action le laissait remonter et l'écran affichait « Le cours n'existe pas ».
+        const message =
+          error instanceof Error && error.message
+            ? error.message
+            : odeServices.http().latestResponse?.statusText || 'http-error';
+        if (isRead) throw error instanceof Error ? error : new Error(message);
+        return { error: message };
+      }
       const http = odeServices.http();
       if (!http.isResponseError()) return result;
       const message = http.latestResponse?.statusText || 'http-error';
-      if (name.startsWith('get')) throw new Error(message);
+      if (isRead) throw new Error(message);
       return { error: message };
     };
   }
