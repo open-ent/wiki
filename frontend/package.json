@@ -83,7 +83,7 @@
     "vitest": "3.2.4"
   },
   "resolutions": {
-    "katex": "0.16.33"
+    "katex": "0.18.2"
   },
   "exports": {
     "./lib": {
